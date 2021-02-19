@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const dbConection = async() => {
     try {
         
-        await mongoose.connect(process.env.MONGODB_ATLAS, {
+        await mongoose.connect("mongodb+srv://restserver_cafecito_uno:Ed53j0kGS6ZnVSPw@cluster0.sf0he.mongodb.net/cafeDB", {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true,
