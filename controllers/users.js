@@ -4,7 +4,7 @@ const Usuario = require('../models/usuario')
 
 const usuariosGet = async(req = request, res = response) => {
     
-    const { limit = 5, from = 0 } = req.query;
+    const { limit = 50, from = 0 } = req.query;
     const query = { estado: true };
 
     // const usuarios = await Usuario.find(query)
@@ -64,15 +64,11 @@ const usuariosPut = async (req, res) => {
 const usuariosDelete = async(req, res) => {
     const { id } = req.params;
 
-    //Borrado Fisicamente
-    // const usuario = await Usuario.findByIdAndDelete(id)
-
     //Borrado por referencia
     const usuario = await Usuario.findByIdAndUpdate(id, {estado: false});
 
     res.json({
-        id,
-        "Usuario Eliminado":usuario
+        usuario
     })
 }
 
