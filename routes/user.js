@@ -8,6 +8,7 @@ const { validarCampos, validarJWT, esAdminRole, tieneRole } = require('../middle
 
 const router = Router();
 
+//Obtener todos los usuarios
 router.get('/', usuariosGet);
 
 router.put('/:id',
